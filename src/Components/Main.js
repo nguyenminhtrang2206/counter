@@ -11,6 +11,12 @@ class Main extends Component {
         });
     }; 
 
+    addFiveHandle = () =>{
+        this.setState({
+            counter: this.state.counter + 5
+        });
+    }; 
+
     removeOneHandle = () =>{
         if (this.state.counter !== 0) {
             this.setState({
@@ -18,6 +24,14 @@ class Main extends Component {
             });
         }
     }; 
+
+    removeFiveHandle = () =>{
+        if (this.state.counter !== 0) {
+            this.setState({
+                counter: this.state.counter - 5
+            });
+        }
+    };
 
     reset = () =>{
         this.setState({
@@ -50,6 +64,8 @@ class Main extends Component {
                 <button className="button" onClick ={this.addOneHandle}>Add one</button>
                 <button className="button" onClick={this.removeOneHandle}>Remove one</button>
                 <button className="button" onClick={this.reset}>Reset</button>
+                <button className="button" onClick={this.addFiveHandle}>Add five</button>
+                <button className="button" onClick={this.removeFiveHandle}>Remove five</button>
                 </div>
             </div>
         );
